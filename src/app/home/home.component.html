@@ -1,0 +1,44 @@
+
+Enter Url:
+<input style="margin: 10px; height: 40px; width: 600px;"  [ngModel]="value" (ngModelChange)="value=$event" id="example-change">
+<button style="margin-right: 10px;" (click)="Clear()" class="btn btn-success">Clear</button>
+    <button class="btn btn-success" (click)="clickFunction()" >Scrap</button>
+    <div id="contentToConvert">
+    <div>
+
+        <ul  *ngFor="let item of scrapList; let i = index">
+
+          <li >
+           <b> SiteName:</b> {{value}}
+          </li>
+            <li>
+              <b> Title:</b>
+               {{item.title}}
+            </li>
+
+            <li>
+              <b>Meta Description:</b> {{item.metaDescription}}
+            </li>
+
+
+            <li>
+             <b> Meta Keywords:</b> {{item.metaKeywords}}
+            </li>
+            <li>
+            <b>  Hyper Links:</b> {{item.hyperLinks}}
+            </li>
+
+            <li>
+              <b>Social Media Links:</b> {{socialMediaList}}
+            </li>
+
+            <li>
+              Screen Capture: 
+              <img  src= {{item.imageUrl}} >
+            </li>
+
+          </ul>
+    </div>
+    <button  style="margin: 10px;" (click)="convetToPDF()" class="btn btn-success">Download Report</button>
+    <button  (click)="SaveScrapper()" class="btn btn-success">Save</button>
+  </div>
